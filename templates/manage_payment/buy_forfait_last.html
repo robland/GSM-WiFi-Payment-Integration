@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/fonts/css/all.min.css">
+        <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="banner">
+                <img class="logo" src="/img/Fichier 6.svg" width="220px" height="" alt="">
+            </div>
+
+            <div class="loader-container">
+                <div class="loader">
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                    <span style="--i:4;"></span>
+                    <span style="--i:5;"></span>
+                    <span style="--i:6;"></span>
+                    <span style="--i:7;"></span>
+                    <span style="--i:8;"></span>
+                    <span style="--i:9;"></span>
+                    <span style="--i:11;"></span>
+                    <span style="--i:12;"></span>
+                    <span style="--i:13;"></span>
+                    <span style="--i:14;"></span>
+                    <span style="--i:15;"></span>
+                    <span style="--i:16;"></span>
+                    <span style="--i:17;"></span>
+                    <span style="--i:18;"></span>
+                    <span style="--i:19;"></span>
+                    <span style="--i:20;"></span>
+                    <div class="rocket"></div>
+                </div>
+    
+            </div>
+
+            <div class="center">
+
+                <img class="logo" src="/img/Fichier 6.svg" width="220px" height="" alt="">
+
+                <form action="POST">
+
+                    <div class="text-box">
+                        <label for="">Téléphone</label>
+                        <input class="input" type="text" required placeholder="Numéro de téléphone ...">
+                        <span></span>
+                    </div>
+
+                    <div class="text-box">
+                        <label for="">Forfait</label>
+                        <select  required>
+                            <option value="">1 heure -- 150 XAF</option>
+                            <option value="">2 heure -- 200 XAF</option>
+                            <option value="">4 heures -- 350 XAF</option>
+                            <option value="">1 journée -- 700 XAF</option>
+                        </select>
+                    </div>
+
+                    <div class="text-box">
+                        <label for="">Réference transaction</label>
+                        <input disabled class="input" type="text" required placeholder="L'ID de la transaction est 452652725">
+                        <span></span>
+                    </div>
+
+                    <button class="button" type="submit">
+                        Acherter 
+                        <span class="fas fa-arrow-right ml-2 arrow-right"></span>
+                    </button>
+
+                </form>
+            </div>
+
+            <script>
+
+                $(".button").click(function(e) {
+                    e.preventDefault();
+                    $(".loader-container").css("display", "block");
+                });
+
+            </script>
+    </body>
+</html>

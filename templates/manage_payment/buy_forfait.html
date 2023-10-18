@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fonts/css/all.min.css' %}">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+           <div class="banner">
+                    <img class="logo" src="{% static 'img/Fichier 6.svg' %}" width="220px" height="" alt="">
+            </div>
+                
+
+            <div class="center">
+
+                
+                <form action="{% url 'new_subscription' %}" method='POST' id="payement-form">
+                    {% csrf_token %}
+                    <!-- div id="id_div_message" class="text-box" style="color: red;">
+                        <p>
+                            La transaction a été lancée.
+                            <b/>
+                            Veuillez confirmer le retrait de la somme de ... par MobileMoney.
+                        </p>
+                    </div -->
+                     
+                    <div class="text-box" id="id_div_number_phone">
+                        <label for="{{ form.number_phone.id_for_label }}">Téléphone</label>
+                        <input class="input" id="{{ form.number_phone.id_for_label }}" value="{{form.number_phone.value|default:''}}" name="number_phone" type="text" required placeholder="Numéro de téléphone ...">
+                        <ul id="id_div_number_phone_errors">
+                            {% for error in form.number_phone.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="text-box" id="id_div_package">
+                        <label for="{{ form.package.id_for_label }}">Forfait</label>
+                        {{ form.package }}
+                        <ul id="id_div_package_errors"></ul>
+                    </div>
+                    
+                
+                    
+
+                    <button type="submit" id="btn">
+                        Acheter 
+                        <span class="fas fa-arrow-right ml-2 arrow-right"></span>
+                    </button>
+
+                </form>
+            </div>
+    </body>
+    
+    <script src="{% static 'js/jquery/jquery.min.js' %}"></script>
+    <!--script src="{% static 'js/process_form.js' %}"></script-->
+    
+
+</html>

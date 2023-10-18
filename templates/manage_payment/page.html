@@ -1,0 +1,7 @@
+{{ request.user }}
+<form method="post" action="{% url 'new_subscription' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input value="Go" type="submit">
+</form>
+

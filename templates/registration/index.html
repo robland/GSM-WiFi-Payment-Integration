@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--!DOCTYPE html-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        <link rel="stylesheet" href="{% static '/css/fonts/css/all.min.css' %}">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="banner">
+                <!-- <img class="logo" src="/img/Sans titre-5.svg" width="220px" height="" alt=""> -->
+            </div>
+
+            <div class="center">
+                <h3 class="form-heading">
+                    <span class="fas fa-user-alt mr-2"></span>
+                    Connexion
+                </h3>
+
+                <form action="post">
+
+                    <div class="text-field">
+                        <label for="username">Téléphone</label>
+                        <input class="input" name="username" type="text" required>
+                        <span></span>    
+                    </div>
+
+                    <div class="text-field">
+                        <input class="input" name="password" type="password" required>
+                        <span></span>
+                        <label for="password">Mot de passe</label>
+                    </div>
+
+                    <div class="pass">Mot de passe oublié ?</div>
+                    <button type="submit">
+                        Connexion 
+                        <span class="fas fa-arrow-right ml-2 arrow-right"></span>
+                    </button>
+
+                    <div class="inscription-div">
+                        Pas de compte ? 
+                        <a href="" class="inscription-link">Inscrivez-vous en 30s</a>
+                    </div>
+
+                </form>
+            </div>
+    </body>
+</html>
+<script type="text/javascript">
+
+//where to submit the form
+
+var submitUrl = "http://" + getQueryString("target") + "/portal/auth";
+
+document.getElementById("form").action = submitUrl;
+
+//assign the value of parameter “clientMac” to the form element “cid”
+
+document.getElementById("cid").value = getQueryString("clientMac");
+
+//assign the value of parameter “radiusServerIp” to the form element “radiusServerIp”
+
+document.getElementById("radiusServerIp").value = getQueryString("radiusServerIp");
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+</script>
